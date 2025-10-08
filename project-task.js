@@ -44,30 +44,30 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+const invalidBookingJSON = 
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15",
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
-      "age": 30,
+      "name": "Alice Johnson",
+      "age": "30",
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": "undefined",
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
-    "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "pricePerNight": "200",
+    "amenities": ["WiFi", "Breakfast", "Parking"]
   }
 }
-`;
+;
 
 
 // ============================================
@@ -77,9 +77,9 @@ const invalidBookingJSON = `
 /*
 - Use a JSON validator or linter (e.g., https://jsonlint.com/) to test your final version
 - Keep track of each fix:
-  • What was wrong?
-  • Why is it a problem in JSON?
-  • What did you change to fix it?
+  • What was wrong? I missed one extra comma
+  • Why is it a problem in JSON? invalid syntax
+  • What did you change to fix it? removed it
 */
 
 
@@ -92,10 +92,19 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+I used my own knowledge to review and jsonlint.com
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
+
+jsonlint.com
 
 3️⃣ Which errors were the most difficult to spot? Why?
 
+An extra comma was the only thing I missed
+
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+
+   Checking by running through a linter
+   
 */
